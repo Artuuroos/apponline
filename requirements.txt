@@ -14,4 +14,4 @@ streamlit==1.10.0
 streamlit_multipage==0.0.18
 streamlit_option_menu==0.3.2
 yagmail==0.15.277
-~treamlit==1.9.0
+
