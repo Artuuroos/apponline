@@ -190,7 +190,7 @@ def app():
   with st.form(key='form'):
         submit_buttonhome = st.form_submit_button(label='Bestätigen')
   def mehrereanfragen(user,wunsch):
-                result=pandas.DataFrame(columns=["username","tabellen"])   
+                result=pandas.DataFrame(columns=["username","tabelle"])   
                 result.loc[len(result)]=[st.session_state.name,wunsch]
                 result.to_sql(name="anfragen", con=engine, if_exists="append")
                 result=result[0:0]
@@ -252,13 +252,13 @@ def app():
                 else: 
                     if "THA" in art_zug_zv2:
                   
-                      print("Diese Zugverbindung wird nicht von uns unterstüzt. Bitte wählen Sie eine Verbindung der Züge von der DB.")
+                      st.info("Diese Zugverbindung wird nicht von uns unterstüzt. Bitte wählen Sie eine Verbindung der Züge von der DB.")
                       break
 
                     else: 
                         if "VRS-Tarif" in sparpreis_zv1:
                         
-                          print ("Hier ist kein Vergleich notwendig, da diese Verbindung zu VRS-Tarifen angeboten wird.")
+                          st.info("Hier ist kein Vergleich notwendig, da diese Verbindung zu VRS-Tarifen angeboten wird.")
                           break 
                       
                         else: 
@@ -269,4 +269,5 @@ def app():
                             result.to_sql(name=wunsch, con=engine, if_exists="append" )
                             result=result[0:0]
                         sleep(18) 
+                        st.info("Ihre Anfrage wurde erfolgreich gespeichert")
                   
