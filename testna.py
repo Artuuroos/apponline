@@ -15,7 +15,7 @@ from sqlalchemy import create_engine
 import pandas
 st.set_page_config("DB","house",layout="wide"),
 PAGES = {
-    
+    "Willkommen": pages.websiteaufruf,
     "Registrierung": pages.registrieren,
     "Anfragen": pages.home,
     "Diagramm": pages.diagramm,
