@@ -13,7 +13,7 @@ import psycopg2
 import psycopg2.extras
 from sqlalchemy import create_engine
 import pandas
-st.set_page_config("DB","house",layout="wide")
+st.set_page_config("DB","house",layout="wide"),
 PAGES = {
     "Willkommen":pages.websiteaufruf,
     "Registrierung": pages.registrieren,
